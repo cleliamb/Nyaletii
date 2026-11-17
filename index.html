@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#5b4031">
+  <meta name="description" content="Nyaleti, ton petit espace de douceur, de confiance et de boss energy.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Nyaleti ♡</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">nyaleti<span>♡</span></div>
+    <div class="tagline">TON PETIT ESPACE À TOI</div>
+  </header>
+
+  <main>
+    <section class="welcome card">
+      <p class="eyebrow" id="todayLabel">TON MOMENT À TOI</p>
+      <h1>Bonjour toi<span class="heart"> ♡</span></h1>
+      <p class="intro">On commence là où tu en es. Pas besoin d'être au top pour prendre soin de toi.</p>
+    </section>
+
+    <section class="card" id="checkin">
+      <p class="eyebrow">01 — TON PETIT CHECK-IN</p>
+      <h2>Comment ça va ce matin ?</h2>
+      <p class="muted">Choisis ce qui se rapproche le plus. Tu peux aussi ne pas savoir.</p>
+      <div class="choice-grid" id="moods">
+        <button class="choice" data-mood="Épuisée">🥱<span>Épuisée</span></button>
+        <button class="choice" data-mood="Anxieuse">🌫️<span>Anxieuse</span></button>
+        <button class="choice" data-mood="Triste">🌧️<span>Triste</span></button>
+        <button class="choice" data-mood="Agitée">🌀<span>Agitée</span></button>
+        <button class="choice" data-mood="Mitigée">☁️<span>Mitigée</span></button>
+        <button class="choice" data-mood="En forme">☀️<span>En forme</span></button>
+      </div>
+      <label class="field-label" for="need">Aujourd'hui, j'ai surtout besoin de…</label>
+      <select id="need">
+        <option value="Me rassurer">Me rassurer</option>
+        <option value="Apaiser mon stress">Apaiser mon stress</option>
+        <option value="Retrouver de l'énergie">Retrouver de l'énergie</option>
+        <option value="Retrouver confiance">Retrouver confiance</option>
+        <option value="Me sentir moins seule">Me sentir moins seule</option>
+        <option value="Juste faire doucement">Juste faire doucement</option>
+      </select>
+      <button class="primary" id="makeRoutine">Trouve-moi mon petit programme ♡</button>
+    </section>
+
+    <section class="card hidden" id="routineCard">
+      <p class="eyebrow">02 — TON PETIT PROGRAMME</p>
+      <h2 id="routineTitle">On y va doucement</h2>
+      <p id="routineIntro" class="muted"></p>
+      <div id="routineSteps" class="steps"></div>
+      <div class="button-row">
+        <button class="secondary" id="newRoutine">Adapter</button>
+        <button class="primary" id="finishRoutine">J'ai terminé ♡</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">03 — TA DOSE DE RÉALITÉ DOUCE</p>
+      <h2 id="affirmation">Tu n'as pas besoin de tout régler aujourd'hui.</h2>
+      <p class="muted" id="affirmationNote">Un petit pas compte aussi.</p>
+      <button class="secondary" id="newAffirmation">Une autre phrase ✦</button>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">04 — MINI JEU CONFIANCE</p>
+      <h2>La collection des petites victoires</h2>
+      <p class="muted">Pas besoin d'un exploit. Une chose toute simple suffit.</p>
+      <p class="prompt" id="gamePrompt">Qu'est-ce que tu as fait récemment, même si ça t'a demandé un effort ?</p>
+      <textarea id="victory" rows="3" placeholder="Aujourd'hui, je reconnais que…"></textarea>
+      <button class="primary" id="saveVictory">Je garde cette victoire ♡</button>
+      <p class="tiny" id="victorySaved" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">05 — PAUSE ANTI-STRESS</p>
+      <h2>On souffle un petit coup ?</h2>
+      <p class="muted">Respiration douce : inspire 4 secondes, expire 6 secondes. Ne force jamais. Reprends un souffle naturel si tu es inconfortable.</p>
+      <div class="breath-wrap">
+        <div class="breath-circle" id="breathCircle"><span id="breathText">Prête ?</span></div>
+        <p id="breathCount" class="muted">Un petit exercice de 2 minutes</p>
+      </div>
+      <div class="button-row">
+        <button class="primary" id="startBreath">Commencer</button>
+        <button class="secondary" id="stopBreath">Arrêter</button>
+      </div>
+      <p class="tiny">Tu peux aussi essayer l'ancrage : regarde autour de toi et nomme 5 choses que tu vois, 4 que tu sens avec ton corps, 3 que tu entends.</p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">06 — TON KIT DES JOURS MOINS FACILES</p>
+      <h2>Ce qui peut m'aider, moi</h2>
+      <p class="muted">Construis-le quand ça va, pour retrouver tes repères quand ça tangue.</p>
+      <label class="field-label" for="kitPeople">Les personnes que je peux contacter</label>
+      <textarea id="kitPeople" rows="2" placeholder="Ex. mes sœurs, une amie…"></textarea>
+      <label class="field-label" for="kitThings">Les petites choses qui m'apaisent</label>
+      <textarea id="kitThings" rows="2" placeholder="Ex. marcher, prendre une douche chaude…"></textarea>
+      <label class="field-label" for="kitWords">Les mots que j'ai besoin d'entendre</label>
+      <textarea id="kitWords" rows="2" placeholder="Ex. ça va passer, je peux demander de l'aide…"></textarea>
+      <button class="primary" id="saveKit">Garder mon kit ♡</button>
+      <p class="tiny" id="kitSaved" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">07 — PETIT MOT POUR MOI</p>
+      <h2>Dépose ce que tu as dans la tête</h2>
+      <textarea id="journal" rows="5" placeholder="Pas besoin de faire de belles phrases. Tu peux écrire comme ça vient…"></textarea>
+      <button class="primary" id="saveJournal">Enregistrer mon petit mot</button>
+      <p class="tiny" id="journalSaved" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">08 — PRENDRE DE MES NOUVELLES</p>
+      <h2>Un petit check-in plus tard ?</h2>
+      <p class="muted">Choisis un rappel. Sur cette version web, le rappel fonctionne quand Nyaleti est ouverte. Pour une notification garantie même application fermée, il faudra une configuration supplémentaire.</p>
+      <label class="field-label" for="reminderTime">Mon heure de pause</label>
+      <input id="reminderTime" type="time" value="15:00">
+      <button class="secondary" id="saveReminder">Enregistrer mon choix</button>
+      <p class="tiny" id="reminderSaved" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">09 — TON CHEMIN, À TON RYTHME</p>
+      <h2>Mes petits repères</h2>
+      <div class="stats">
+        <div><strong id="checkinCount">0</strong><span>check-ins</span></div>
+        <div><strong id="victoryCount">0</strong><span>petites victoires</span></div>
+        <div><strong id="journalCount">0</strong><span>petits mots</span></div>
+      </div>
+      <button class="secondary" id="exportData">Exporter mes données</button>
+      <label class="secondary file-label">Importer une sauvegarde<input type="file" id="importData" accept="application/json"></label>
+      <p class="tiny">Tes données restent dans le stockage de ce navigateur sur ton téléphone. Pense à faire une sauvegarde de temps en temps.</p>
+    </section>
+  </main>
+
+  <footer>nyaleti ♡ <span>soft heart, strong mind — à ton rythme.</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

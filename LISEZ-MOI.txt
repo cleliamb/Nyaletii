@@ -1,0 +1,17 @@
+NYALETI — installation gratuite sur Android
+
+1. Décompressez le ZIP.
+2. Créez un dépôt PUBLIC nommé exactement : nyaleti sur https://github.com
+3. Dans le dépôt : Add file > Upload files. Envoyez tous les fichiers et dossiers contenus dans ce ZIP (pas le ZIP lui-même), puis Commit changes.
+4. Dans Settings > Pages : Deploy from a branch > main > /(root) > Save.
+5. Attendez quelques minutes. L'adresse sera https://VOTREPSEUDOGITHUB.github.io/nyaleti/
+6. Ouvrez cette adresse dans Chrome sur Android, menu ⋮ > Installer l'application (ou Ajouter à l'écran d'accueil).
+
+À SAVOIR
+- Cette version est une PWA : elle s'installe depuis Chrome, sans Play Store.
+- Les entrées de journal, humeurs, victoires et kit sont stockées localement dans le navigateur de cet appareil.
+- Utilisez « Exporter mes données » régulièrement. Les données locales peuvent être perdues si les données du navigateur sont effacées ou si le téléphone est remplacé.
+- Le dépôt GitHub public expose le code, PAS les données personnelles saisies dans l'application.
+- Le rappel horaire de cette première version est un aide-mémoire. Une notification automatique fiable quand l'application est fermée nécessite une configuration de notifications push ou une application native; en attendant, créez un rappel dans l'application Horloge Android.
+- Montserrat est chargée depuis Google Fonts lorsque la connexion est disponible; une police de remplacement sera utilisée hors ligne.
+- Le minuteur de respiration est une proposition facultative. Ne forcez jamais la respiration et arrêtez si vous ressentez un inconfort.
